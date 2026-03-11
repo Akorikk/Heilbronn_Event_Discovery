@@ -2,43 +2,46 @@
 
 echo "Creating project structure..."
 
-mkdir -p backend/crawler
-mkdir -p backend/extraction
-mkdir -p backend/pipeline
-mkdir -p backend/api
-mkdir -p backend/database
-mkdir -p backend/scheduler
+# Create directories
 
+mkdir -p crawler
+mkdir -p extractor
+mkdir -p pipeline
+mkdir -p database
+mkdir -p api
+mkdir -p webhook
+mkdir -p scheduler
 mkdir -p frontend
-mkdir -p logs
-mkdir -p data
 
-touch backend/crawler/__init__.py
-touch backend/crawler/event_spider.py
-touch backend/crawler/instagram_scraper.py
-touch backend/crawler/sources.py
+# Create Python files
 
-touch backend/extraction/__init__.py
-touch backend/extraction/ai_parser.py
-touch backend/extraction/event_schema.py
+touch crawler/scraper.py
+touch crawler/instagram_scraper.py
 
-touch backend/pipeline/__init__.py
-touch backend/pipeline/deduplication.py
-touch backend/pipeline/event_processor.py
+touch extractor/parser.py
+touch extractor/ai_extractor.py
 
-touch backend/api/__init__.py
-touch backend/api/main.py
-touch backend/api/routes.py
+touch pipeline/deduplicate.py
+touch pipeline/processor.py
 
-touch backend/database/__init__.py
-touch backend/database/models.py
-touch backend/database/db.py
+touch database/models.py
+touch database/db.py
 
-touch backend/scheduler/__init__.py
-touch backend/scheduler/crawler_job.py
+touch api/main.py
+touch api/routes.py
+
+touch webhook/notifier.py
+
+touch scheduler/run_crawler.py
+
+touch frontend/streamlit_app.py
+
+# Root files
 
 touch requirements.txt
+touch Dockerfile
 touch README.md
-touch .env
 
 echo "Project structure created successfully!"
+
+tree
