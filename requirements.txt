@@ -18,3 +18,4 @@ httpx
 pandas
 loguru
 streamlit
+streamlit-autorefresh
